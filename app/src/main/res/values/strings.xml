@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Convention Logistic Tracker</string>
+
+    <string-array name="menu_array">
+        <item>Menu option 1</item>
+        <item>Menu option 2</item>
+        <item>Menu option 3</item>
+        <item>Menu option 4</item>
+        <item>Menu option 5</item>
+        <item>Menu option 6</item>
+    </string-array>
+
 </resources>
