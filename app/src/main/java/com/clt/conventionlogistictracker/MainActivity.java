@@ -80,8 +80,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.schedule:
                         break;
-                    case R.id.about:
-                        break;
                     default:
                         break;
                 }

@@ -6,7 +6,11 @@
     android:orientation="horizontal"
     android:gravity="bottom"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:background="@drawable/headerbg">
+    android:background="@drawable/headerbg"
+    android:paddingBottom="15dp"
+    android:paddingTop="33dp"
+    >
+
 
     <ImageView
         android:id="@+id/imageView3"
@@ -18,9 +22,11 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
+        android:fontFamily="sans-serif-condensed"
+        android:paddingBottom="22dp"
         android:text="@string/app_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp" />
 
 
 

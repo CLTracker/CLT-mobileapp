@@ -20,9 +20,5 @@
             android:id="@+id/schedule"
             android:icon="@drawable/ic_chrome_reader_mode"
             android:title="Schedule" />
-
-        <item
-            android:id="@+id/about"
-            android:title="About" />
     </group>
 </menu>
