@@ -4,7 +4,8 @@
         <item
             android:id="@+id/home"
             android:icon="@drawable/ic_home"
-            android:title="Home" />
+            android:title="Home"
+            android:checked="true"/>
 
         <item
             android:id="@+id/exhibitors_list"

@@ -22,9 +22,9 @@
             layout="@layout/toolbar_layout" />
 
         <FrameLayout
-            android:id="@+id/frame_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:id="@+id/frame_content" />
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
