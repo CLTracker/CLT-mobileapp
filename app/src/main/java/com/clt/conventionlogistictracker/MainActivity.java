@@ -64,9 +64,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.home:
-                        /*HomeFragment homeFragment = new HomeFragment();
+                        HomeFragment homeFragment = new HomeFragment();
                         FragmentManager managerHome = getSupportFragmentManager();
-                        managerHome.beginTransaction().replace(R.id.frame_content, homeFragment, homeFragment.getTag()).commit();*/
+                        managerHome.beginTransaction().replace(R.id.frame_content, homeFragment, homeFragment.getTag()).commit();
                         break;
                     case R.id.exhibitors_list:
                         ExhibitorsListFragment exhibitorsListFragment = new ExhibitorsListFragment();

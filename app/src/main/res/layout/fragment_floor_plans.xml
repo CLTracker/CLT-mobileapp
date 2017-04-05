@@ -2,15 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.clt.conventionlogistictracker.FloorPlansFragment">
-    <LinearLayout
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context="com.clt.conventionlogistictracker.FloorPlansFragment" >
+
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="This is the webview"/>
+        android:layout_margin="8dp"
+        card_view:cardCornerRadius="2dp" >
+
 
         <WebView
             android:id="@+id/floor_plan"
@@ -18,9 +18,5 @@
             android:layout_height="match_parent"
             />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="This is the bottom of the webview"/>
-    </LinearLayout>
+    </android.support.v7.widget.CardView>
 </RelativeLayout>
