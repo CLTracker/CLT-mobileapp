@@ -28,7 +28,7 @@ public class FloorPlansFragment extends Fragment {
         mWebView.getSettings().setBuiltInZoomControls(true);
         mWebView.getSettings().setDisplayZoomControls(false);
 
-        mWebView.loadUrl("http://welcometomonarchlanding.com/wp-content/themes/thespring/images/floorplan-jackson.png");
+        mWebView.loadUrl("http://grfx.cstv.com/schools/unlv/graphics/parking-map-campus-mens-bball.jpg");
 
         // Inflate the layout for this fragment
         return rootView;
