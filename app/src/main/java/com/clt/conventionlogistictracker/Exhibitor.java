@@ -5,13 +5,35 @@ package com.clt.conventionlogistictracker;
  */
 
 public class Exhibitor {
-    public final String companyName;
-
-    public Exhibitor(String companyName) {
-        this.companyName = companyName;
+    public static String company_name;
+    public static String logo_url;
+    public static String conference;
+//
+//
+    public Exhibitor() {
+        this.company_name = company_name;
+        //this.logo_url = logo_url;
+        //this.conference = 1;
     }
 
+    public void setCompanyName(String company_name) {
+        this.company_name = company_name;
+    }
     public String getCompanyName() {
-        return this.companyName;
+        return this.company_name;
+    }
+
+    public void setLogoUrl(String logo_url) {
+        this.logo_url = logo_url;
+    }
+    public String getLogoUrl() {
+        return this.logo_url;
+    }
+
+    public void setConference(String conference) {
+        this.conference = conference;
+    }
+    public String getConference() {
+        return this.conference;
     }
 }
