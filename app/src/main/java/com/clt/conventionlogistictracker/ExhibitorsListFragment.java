@@ -31,7 +31,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import static android.R.attr.data;
-import static com.clt.conventionlogistictracker.Exhibitor.company_name;
+import com.clt.conventionlogistictracker.Exhibitor;
 
 
 /**
@@ -75,13 +75,16 @@ public class ExhibitorsListFragment extends Fragment{
                // JSONArray jsonArray1 = response.getJSONArray("mExhibitors");
                 for (int i=0; i<jsonArray.length(); i++) {
                     JSONObject object = jsonArray.getJSONObject(i);
-                    Exhibitor exhibitor = new Exhibitor();
                     if (jsonArray != null) {
-                        exhibitor.setCompanyName(object.getString("company_name"));
+                        //exhibitor.setCompanyName(object.getString("company_name"));
 //                        exhibitor.setLogoUrl(object.getString("logo_url"));
 //                        exhibitor.setConference(object.getString("conference"));
+
+
+                        mExhibitorsList.add(new Exhibitor(object.getString("company_name")));
+                        Log.d("DOES THIS FUCKING WORK", mExhibitorsList.toString());
                     }
-                    mExhibitorsList.add(exhibitor);
+
                 }
 
                 Log.d("DOES THIS FUCKING WORK", jsonArray.toString());

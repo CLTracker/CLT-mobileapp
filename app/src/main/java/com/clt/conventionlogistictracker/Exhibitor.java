@@ -5,12 +5,12 @@ package com.clt.conventionlogistictracker;
  */
 
 public class Exhibitor {
-    public static String company_name;
-    public static String logo_url;
-    public static String conference;
+    public String company_name;
+    public String logo_url;
+    public String conference;
 //
 //
-    public Exhibitor() {
+    public Exhibitor(String company_name) {
         this.company_name = company_name;
         //this.logo_url = logo_url;
         //this.conference = 1;
