@@ -26,9 +26,11 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static android.R.attr.data;
 import com.clt.conventionlogistictracker.Exhibitor;
@@ -40,16 +42,19 @@ import com.clt.conventionlogistictracker.Exhibitor;
 public class ExhibitorsListFragment extends Fragment{
 
     ArrayList<Exhibitor> mExhibitorsList = new ArrayList<Exhibitor>();
+    View rootView;
 
     public ExhibitorsListFragment() {
         // Required empty public constructor
     }
 
-    private class RetrieveFeedTask extends AsyncTask<String, Void, Void> {
+    private class RetrieveFeedTask extends AsyncTask<Void, Void, ArrayList<Exhibitor>> {
         private Exception exception;
 
+        ArrayList<Exhibitor> temp = new ArrayList<Exhibitor>();
+
         @Override
-        protected Void doInBackground(String... strings) {
+        protected ArrayList<Exhibitor> doInBackground(Void... arg0) {
 
             try{
                 String url = "http://cltglobal.ddns.net:8080/exhibitors/1";
@@ -68,118 +73,59 @@ public class ExhibitorsListFragment extends Fragment{
                 }
                 in.close();
 
-                Log.d("does", response.toString());
-                //ArrayList<Exhibitor> mExhibitors = new ArrayList<Exhibitor>();
+                Log.d("WORK???1", response.toString());
 
                 JSONArray jsonArray = new JSONArray(response.toString());
-               // JSONArray jsonArray1 = response.getJSONArray("mExhibitors");
                 for (int i=0; i<jsonArray.length(); i++) {
                     JSONObject object = jsonArray.getJSONObject(i);
                     if (jsonArray != null) {
-                        //exhibitor.setCompanyName(object.getString("company_name"));
-//                        exhibitor.setLogoUrl(object.getString("logo_url"));
-//                        exhibitor.setConference(object.getString("conference"));
-
-
-                        mExhibitorsList.add(new Exhibitor(object.getString("company_name")));
-                        Log.d("DOES THIS FUCKING WORK", mExhibitorsList.toString());
+                        temp.add(new Exhibitor(object.getString("company_name")));
+                        Log.d("WORK???2", temp.toString());
                     }
-
                 }
-
-                Log.d("DOES THIS FUCKING WORK", jsonArray.toString());
-
+                Log.d("WORK???3", jsonArray.toString());
             }catch(Exception e)
-
             {
-                Log.d("well", "\n\n\n"+e.toString()+"\n\n\n\n");
+                Log.d("NO WORK!!!", "\n\n\n"+e.toString()+"\n\n\n\n");
             }
-            return null;
+            return temp;
         }
-
+        protected void onPostExecute(ArrayList<Exhibitor> result) {
+            super.onPostExecute(result);
+            setList(result);
+            loadAll();
+            Log.d("WORK???4", result.toString());
+        }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_exhibitors_list, container, false);
-        RetrieveFeedTask rt = new RetrieveFeedTask();
-        rt.execute();
-//        ArrayList<Exhibitor> mExhibitors = getExhibitorsList();
-//        for (int i = 0; i < mExhibitors.size(); i++) {
-//            Exhibitor _mExhibitors = mExhibitors.get(i);
-//            mExhibitorsList.add(_mExhibitors);
-//        }
+    public void setList(ArrayList<Exhibitor> exlist){
+        this.mExhibitorsList = exlist;
+    }
 
+
+    public void loadAll() {
         // create an adapter
         RecyclerViewAdapter adapter = new RecyclerViewAdapter<Exhibitor>(mExhibitorsList, R.layout.exhibitor_item_layout, BR.exhibitor);
         RecyclerView exhibitorListContainer = (RecyclerView) rootView.findViewById(R.id.exhibitors_list_recycler_view);
         exhibitorListContainer.setHasFixedSize(false);
+
         // set adapter
         exhibitorListContainer.setAdapter(adapter);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         exhibitorListContainer.setLayoutManager(llm);
+        adapter.notifyDataSetChanged();
+        exhibitorListContainer.invalidate();
+        adapter.notifyDataSetChanged();
+    }
 
-        // Inflate the layout for this fragment
-//
-//        RequestQueue requestQueue =  Volley.newRequestQueue(getActivity().getApplicationContext());
-//        String url = "http://0.0.0.0:5000/exhibitors/1";
-//
-//        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
-//            @Override
-//            public void onResponse(JSONArray response) {
-//                try {
-//                    if (response.length() > 0) {
-//                        mExhibitorsList.clear();
-//                        for (int i = 0; i < response.length(); i++) {
-//                            JSONObject jsonObject = response.getJSONObject(i);
-//                            Exhibitor obj = new Exhibitor();
-//                            if (!jsonObject.isNull("company_name")) {
-//                                Exhibitor.company_name = jsonObject.getString("company_name");
-//                            }
-//                            mExhibitorsList.add(obj);
-//                        }
-//                        adapter.notifyDataSetChanged();
-//                    }
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                System.out.println("no");
-//            }
-//        });
-//
-//        requestQueue.add(jsonArrayRequest);
-
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        rootView = inflater.inflate(R.layout.fragment_exhibitors_list, container, false);
+        RetrieveFeedTask rt = new RetrieveFeedTask();
+        rt.execute();
 
         return rootView;
     }
-
-//    private ArrayList<Exhibitor> getExhibitorsList() {
-//        //TODO Replace with call to service
-//        ArrayList<Exhibitor> result = new ArrayList<Exhibitor>();
-//
-//        result.add(new Exhibitor("FLTR"));
-//        result.add(new Exhibitor("CASH"));
-//        result.add(new Exhibitor("SPOTS"));
-//        result.add(new Exhibitor("Link"));
-//        result.add(new Exhibitor("1"));
-//        result.add(new Exhibitor("2"));
-//        result.add(new Exhibitor("3"));
-//        result.add(new Exhibitor("4"));
-//        result.add(new Exhibitor("5"));
-//        result.add(new Exhibitor("6"));
-//        result.add(new Exhibitor("7"));
-//        result.add(new Exhibitor("8"));
-//        result.add(new Exhibitor("9"));
-//        result.add(new Exhibitor("10"));
-//        result.add(new Exhibitor("11"));
-//        result.add(new Exhibitor("12"));
-//
-//        return result;
-//    }
 
 }

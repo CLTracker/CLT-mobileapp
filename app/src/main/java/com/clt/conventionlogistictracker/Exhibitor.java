@@ -1,5 +1,7 @@
 package com.clt.conventionlogistictracker;
 
+import android.util.Log;
+
 /**
  * Created by dongw on 4/4/17.
  */
@@ -35,5 +37,9 @@ public class Exhibitor {
     }
     public String getConference() {
         return this.conference;
+    }
+
+    public void printOut(){
+        Log.d(company_name, conference);
     }
 }

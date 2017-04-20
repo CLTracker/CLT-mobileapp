@@ -5,19 +5,19 @@ package com.clt.conventionlogistictracker;
  */
 
 public class News {
-    public final String title;
-    public final String announcement;
+    public String title;
+    public String text;
 
-    public News(String title, String announcement) {
+    public News(String title, String text) {
         this.title = title;
-        this.announcement = announcement;
+        this.text = text;
     }
 
     public String getTitle() {
         return this.title;
     }
-    public String getAnnouncement() {
-        return this.announcement;
+    public String getText() {
+        return this.text;
     }
 
 }

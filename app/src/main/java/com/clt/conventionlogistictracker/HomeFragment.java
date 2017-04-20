@@ -1,14 +1,23 @@
 package com.clt.conventionlogistictracker;
 
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 
 
@@ -18,58 +27,87 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
 
     private ArrayList<News> mNewsList = new ArrayList<News>();
+    View rootView;
 
     public HomeFragment() {
         // Required empty public constructor
     }
 
+    private class RetrieveFeedTask extends AsyncTask<Void, Void, ArrayList<News>> {
+        private Exception exception;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        ArrayList<News> temp = new ArrayList<News>();
 
-        ArrayList<News> mNews = getNewsList();
-        for(int i = 0; i < mNews.size(); i++) {
-            News _mNews = mNews.get(i);
-            mNewsList.add(_mNews);
+        @Override
+        protected ArrayList<News> doInBackground(Void... arg0) {
+
+            try{
+                String url = "http://cltglobal.ddns.net:8080/news/1";
+                Log.d("does", url);
+
+                URL obj = new URL(url);
+                HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+                con.setRequestMethod("GET");
+                BufferedReader in = new BufferedReader(
+                        new InputStreamReader(con.getInputStream()));
+                String inputLine;
+                StringBuffer response = new StringBuffer();
+
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+
+                Log.d("WORK???1", response.toString());
+
+                JSONArray jsonArray = new JSONArray(response.toString());
+                for (int i=0; i<jsonArray.length(); i++) {
+                    JSONObject object = jsonArray.getJSONObject(i);
+                    if (jsonArray != null) {
+                        temp.add(new News(object.getString("title"),object.getString("text")));
+                        Log.d("WORK???2", temp.toString());
+                    }
+                }
+                Log.d("WORK???3", jsonArray.toString());
+            }catch(Exception e)
+            {
+                Log.d("NO WORK!!!", "\n\n\n"+e.toString()+"\n\n\n\n");
+            }
+            return temp;
         }
+        protected void onPostExecute(ArrayList<News> result) {
+            super.onPostExecute(result);
+            setList(result);
+            loadAll();
+            Log.d("WORK???4", result.toString());
+        }
+    }
+    public void setList(ArrayList<News> exlist){
+        this.mNewsList = exlist;
+    }
 
+    public void loadAll() {
         // create an adapter
         RecyclerViewAdapter adapter = new RecyclerViewAdapter<News>(mNewsList, R.layout.news_item_layout, BR.news);
         RecyclerView newsListContainer = (RecyclerView) rootView.findViewById(R.id.news_list_recycler_view);
         newsListContainer.setHasFixedSize(false);
+
         // set adapter
         newsListContainer.setAdapter(adapter);
-
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         newsListContainer.setLayoutManager(llm);
-        // Inflate the layout for this fragment
-        return rootView;
+        adapter.notifyDataSetChanged();
+        newsListContainer.invalidate();
+        adapter.notifyDataSetChanged();
     }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        HomeFragment.RetrieveFeedTask rt = new RetrieveFeedTask();
+        rt.execute();
 
-    private ArrayList<News> getNewsList() {
-        //TODO Replace with call to service
-        ArrayList<News> result = new ArrayList<News>();
-
-        result.add(new News("CES Kicks Off!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "));
-        result.add(new News("Free Swag at Samsung Booth", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "));
-        result.add(new News("New Drone Hits the Stage", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "));
-        result.add(new News("Apple Announcement", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "));
-        result.add(new News("Tesla Speech @2pm", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "));
-        result.add(new News("Free Food in West Wing", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "));
-        result.add(new News("CES Kicks Off!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "));
-        result.add(new News("Free Swag at Samsung Booth", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "));
-        result.add(new News("New Drone Hits the Stage", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "));
-        result.add(new News("Apple Announcement", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "));
-        result.add(new News("Tesla Speech @2pm", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "));
-        result.add(new News("Free Food in West Wing", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "));
-        result.add(new News("9", "hello"));
-        result.add(new News("10", "hello"));
-        result.add(new News("11", "hello"));
-        result.add(new News("12", "hello"));
-
-        return result;
+        return rootView;
     }
 
 }

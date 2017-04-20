@@ -34,7 +34,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_toRightOf="@id/company_logo"
                 android:ellipsize="marquee"
-                android:text='@{news.announcement}'
+                android:text='@{news.text}'
                 android:textSize="12sp" />
 
             <TextView
