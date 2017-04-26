@@ -24,12 +24,12 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class NewsFragment extends Fragment {
 
     private ArrayList<News> mNewsList = new ArrayList<News>();
     View rootView;
 
-    public HomeFragment() {
+    public NewsFragment() {
         // Required empty public constructor
     }
 
@@ -104,7 +104,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_home, container, false);
-        HomeFragment.RetrieveFeedTask rt = new RetrieveFeedTask();
+        NewsFragment.RetrieveFeedTask rt = new RetrieveFeedTask();
         rt.execute();
 
         return rootView;

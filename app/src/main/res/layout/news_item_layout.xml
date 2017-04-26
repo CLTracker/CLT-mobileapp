@@ -67,7 +67,6 @@
                     android:id="@id/thirdLine"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
                     android:gravity="end"
                     android:ellipsize="marquee"
                     android:text='@{news.author}'

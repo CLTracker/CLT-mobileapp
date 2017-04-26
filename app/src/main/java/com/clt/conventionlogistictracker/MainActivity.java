@@ -1,28 +1,13 @@
 package com.clt.conventionlogistictracker;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-
-import android.view.View;
-import android.widget.Toast;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setToolbar();
         setupDrawer();
         //new ExhibitorsListFragment.RetrieveFeedTask().execute(url);
-        HomeFragment homeFragment = new HomeFragment();
+        NewsFragment newsFragment = new NewsFragment();
         FragmentManager managerHome = getSupportFragmentManager();
-        managerHome.beginTransaction().replace(R.id.frame_content, homeFragment, homeFragment.getTag()).commit();
+        managerHome.beginTransaction().replace(R.id.frame_content, newsFragment, newsFragment.getTag()).commit();
 
 
 
@@ -81,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.home:
-                        HomeFragment homeFragment = new HomeFragment();
+                        NewsFragment newsFragment = new NewsFragment();
                         FragmentManager managerHome = getSupportFragmentManager();
-                        managerHome.beginTransaction().replace(R.id.frame_content, homeFragment, homeFragment.getTag()).commit();
+                        managerHome.beginTransaction().replace(R.id.frame_content, newsFragment, newsFragment.getTag()).commit();
                         break;
                     case R.id.exhibitors_list:
                         ExhibitorsListFragment exhibitorsListFragment = new ExhibitorsListFragment();
