@@ -7,34 +7,34 @@ import java.util.Date;
  */
 
 public class Schedule {
-    public Date startTime;
-    public Date endTime;
-    public String eventName;
+    public String start_time;
+    public String end_time;
+    public String event_name;
 
-    public Schedule(Date startTime, String eventName, Date endTime) {
-        this.startTime = startTime;
-        this.eventName = eventName;
-        this.endTime = endTime;
-    }
-
-    public Date getStartTime() {
-        return startTime;
-    }
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
+    public Schedule(String start_time, String event_name, String end_time) {
+        this.start_time = start_time;
+        this.event_name = event_name;
+        this.end_time = end_time;
     }
 
-    public Date getEndTime() {
-        return endTime;
+    public String getStartTime() {
+        return start_time;
     }
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
+    public void setStartTime(String start_time) {
+        this.start_time = start_time;
+    }
+
+    public String getEndTime() {
+        return end_time;
+    }
+    public void setEndTime(String end_time) {
+        this.end_time = end_time;
     }
 
     public String getEventName() {
-        return eventName;
+        return event_name;
     }
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
+    public void setEventName(String event_name) {
+        this.event_name = event_name;
     }
 }

@@ -20,8 +20,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:gravity="end"
+                android:layout_alignParentTop="true"
                 android:ellipsize="marquee"
                 android:text='@{schedule.eventName}'
                 android:textSize="20sp" />
@@ -30,7 +29,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:gravity="end"
                 android:ellipsize="marquee"
                 android:text='@{schedule.startTime + " to " + schedule.endTime }'
                 android:textSize="16sp" />
