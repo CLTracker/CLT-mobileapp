@@ -7,10 +7,12 @@ package com.clt.conventionlogistictracker;
 public class News {
     public String title;
     public String text;
+    public String author;
 
-    public News(String title, String text) {
+    public News(String title, String text, String author) {
         this.title = title;
         this.text = text;
+        this.author = author;
     }
 
     public String getTitle() {
@@ -18,6 +20,9 @@ public class News {
     }
     public String getText() {
         return this.text;
+    }
+    public String getAuthor() {
+        return this.author;
     }
 
 }

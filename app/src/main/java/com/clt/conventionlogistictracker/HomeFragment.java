@@ -64,7 +64,7 @@ public class HomeFragment extends Fragment {
                 for (int i=0; i<jsonArray.length(); i++) {
                     JSONObject object = jsonArray.getJSONObject(i);
                     if (jsonArray != null) {
-                        temp.add(new News(object.getString("title"),object.getString("text")));
+                        temp.add(new News(object.getString("title"),object.getString("text"),object.getString("author")));
                         Log.d("WORK???2", temp.toString());
                     }
                 }

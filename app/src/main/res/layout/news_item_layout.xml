@@ -13,44 +13,66 @@
         android:layout_margin="4dp"
         card_view:cardCornerRadius="2dp" >
 
+        <!--
+            android:layout_height="?android:attr/listPreferredItemHeight"-->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="?android:attr/listPreferredItemHeight"
-            android:padding="6dp" >
+            android:layout_height="wrap_content"
+            android:padding="4dp" >
 
             <ImageView
                 android:id="@+id/company_logo"
-                android:layout_width="55dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentTop="true"
-                android:src="@mipmap/unlv_logo"/>
-
-            <TextView
-                android:id="@+id/secondLine"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/unlv_logo"
+                android:scaleType="fitXY" />
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_toRightOf="@id/company_logo"
-                android:ellipsize="marquee"
-                android:text='@{news.text}'
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/firstLine"
-                android:layout_width="match_parent"
-                android:layout_height="26dip"
-                android:layout_above="@id/secondLine"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical"
                 android:layout_alignWithParentIfMissing="true"
-                android:layout_toRightOf="@id/company_logo"
-                android:gravity="center_vertical"
-                android:ellipsize="marquee"
-                android:maxLines="1"
-                android:text='@{news.title}'
-                android:textSize="16sp" />
+                android:layout_toRightOf="@id/company_logo">
+
+                <TextView
+                    android:id="@+id/firstLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_vertical"
+                    android:ellipsize="marquee"
+                    android:text='@{news.title}'
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/accent_material_light"
+                    android:paddingBottom="5dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/secondLine"
+                    android:layout_above="@+id/thirdLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:text='@{news.text}'
+                    android:textSize="16sp"
+                    android:paddingTop="5dp"/>
+
+                <TextView
+                    android:id="@id/thirdLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="end"
+                    android:ellipsize="marquee"
+                    android:text='@{news.author}'
+                    android:textSize="16sp" />
+            </LinearLayout>
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>
