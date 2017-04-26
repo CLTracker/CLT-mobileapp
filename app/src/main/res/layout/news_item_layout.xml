@@ -24,7 +24,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentTop="true"
-                android:src="@drawable/clt_logo_sq"/>
+                android:src="@mipmap/unlv_logo"/>
 
             <TextView
                 android:id="@+id/secondLine"

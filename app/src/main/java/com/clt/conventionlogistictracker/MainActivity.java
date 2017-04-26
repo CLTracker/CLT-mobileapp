@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         setToolbar();
         setupDrawer();
         //new ExhibitorsListFragment.RetrieveFeedTask().execute(url);
+        HomeFragment homeFragment = new HomeFragment();
+        FragmentManager managerHome = getSupportFragmentManager();
+        managerHome.beginTransaction().replace(R.id.frame_content, homeFragment, homeFragment.getTag()).commit();
 
 
 
@@ -93,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
                         manager2.beginTransaction().replace(R.id.frame_content , floorPlansFragment).commit();
                         break;
                     case R.id.schedule:
+                        ScheduleFragment scheduleFragment = new ScheduleFragment();
+                        FragmentManager manager3 = getSupportFragmentManager();
+                        manager3.beginTransaction().replace(R.id.frame_content , scheduleFragment).commit();
                         break;
                     default:
                         break;
