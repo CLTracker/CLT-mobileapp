@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
         setToolbar();
         setupDrawer();
         //new ExhibitorsListFragment.RetrieveFeedTask().execute(url);
-        NewsFragment newsFragment = new NewsFragment();
-        FragmentManager managerHome = getSupportFragmentManager();
-        managerHome.beginTransaction().replace(R.id.frame_content, newsFragment, newsFragment.getTag()).commit();
 
-
-
+        if(savedInstanceState == null) {
+            NewsFragment newsFragment = new NewsFragment();
+            FragmentManager managerHome = getSupportFragmentManager();
+            managerHome.beginTransaction().replace(R.id.frame_content, newsFragment, newsFragment.getTag()).commit();
+        }
     }
 
 
