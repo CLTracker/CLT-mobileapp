@@ -33,4 +33,5 @@ dependencies {
     compile 'com.android.databinding:compiler:1.0-rc0'
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.alamkanak:android-week-view:1.2.6'
 }
