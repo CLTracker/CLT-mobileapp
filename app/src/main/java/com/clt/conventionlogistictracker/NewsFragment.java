@@ -4,6 +4,7 @@ package com.clt.conventionlogistictracker;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 public class NewsFragment extends Fragment {
 
     private ArrayList<News> mNewsList = new ArrayList<News>();
-    View rootView;
+    private View rootView;
 
     public NewsFragment() {
         // Required empty public constructor
@@ -87,7 +88,6 @@ public class NewsFragment extends Fragment {
     }
 
     public void loadAll() {
-
         RecyclerView newsListContainer = (RecyclerView) rootView.findViewById(R.id.news_list_recycler_view);
         NewsViewAdapter adapter = new NewsViewAdapter(getActivity().getApplicationContext(), mNewsList);
         newsListContainer.setHasFixedSize(false);
@@ -108,5 +108,4 @@ public class NewsFragment extends Fragment {
 
         return rootView;
     }
-
 }

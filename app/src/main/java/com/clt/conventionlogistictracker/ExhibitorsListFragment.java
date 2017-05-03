@@ -83,7 +83,7 @@ public class ExhibitorsListFragment extends Fragment{
                 for (int i=0; i<jsonArray.length(); i++) {
                     JSONObject object = jsonArray.getJSONObject(i);
                     if (jsonArray != null) {
-                        temp.add(new Exhibitor(object.getString("company"), object.getString("logo_url")));
+                        temp.add(new Exhibitor(object.getString("company"), object.getString("logo_url"), object.getString("bio")));
                         Log.d("WORK???2", temp.toString());
                     }
                 }

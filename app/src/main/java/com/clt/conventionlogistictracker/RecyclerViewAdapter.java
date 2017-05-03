@@ -1,10 +1,8 @@
 package com.clt.conventionlogistictracker;
 
 import android.content.Context;
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
+import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -36,12 +34,30 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             imageView = (ImageView) itemView.findViewById(R.id.company_logo);
         }
 
+        /* Set up onClick to grab the bio of the companies
+         * Display the bio of the companies in an AlertDialog
+         */
         @Override
         public void onClick(View v) {
             Log.d("RecyclerView onClick", "Element " + getAdapterPosition() + " clicked.");
 
-            Toast toast = Toast.makeText(mContext, "Got to " + getAdapterPosition() + " here", Toast.LENGTH_SHORT);
-            toast.show();
+            String message = mExhibitors.get(getAdapterPosition()).getBio();
+            if (message == null) {
+                message = "No bio set by this exhibitor.";
+            }
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+            builder.setTitle(mExhibitors.get(getAdapterPosition()).getCompanyName());
+            builder.setMessage(message);
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
 
             if (mOnEntryClickListener != null) {
                 mOnEntryClickListener.onEntryClick(v, getLayoutPosition());
@@ -62,12 +78,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mExhibitors.size();
     }
 
+    /* Inflate the layout
+     * Add the cardviews into the container
+     */
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.exhibitor_item_layout, parent, false);
         return new RecyclerViewHolder(view);
     }
 
+    /* Bind the view
+     * Loads the image of mExhibitor into the cardview
+     */
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
         Exhibitor exhibitor = mExhibitors.get(position);

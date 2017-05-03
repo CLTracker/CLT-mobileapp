@@ -10,7 +10,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#e5e5e5">
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/exhibitors_list_recycler_view"
                 android:layout_width="match_parent"
