@@ -34,7 +34,7 @@ public class ScheduleFragment extends Fragment {
     public ScheduleFragment() {
         // Required empty public constructor
     }
-
+/*
     private class RetrieveFeedTask extends AsyncTask<Void, Void, ArrayList<Schedule>> {
         private Exception exception;
 
@@ -103,13 +103,13 @@ public class ScheduleFragment extends Fragment {
         newsListContainer.invalidate();
         adapter.notifyDataSetChanged();
     }
-
+*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_schedule, container, false);
-        ScheduleFragment.RetrieveFeedTask rt = new ScheduleFragment.RetrieveFeedTask();
-        rt.execute();
+        //ScheduleFragment.RetrieveFeedTask rt = new ScheduleFragment.RetrieveFeedTask();
+        //rt.execute();
         return rootView;
     }
 

@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ImageView;
 
 import com.android.volley.Request;
@@ -36,6 +37,7 @@ import java.util.Iterator;
 
 import static android.R.attr.data;
 import com.clt.conventionlogistictracker.Exhibitor;
+import com.squareup.picasso.Picasso;
 
 
 /**
@@ -50,7 +52,7 @@ public class ExhibitorsListFragment extends Fragment{
         // Required empty public constructor
     }
 
-    private class RetrieveFeedTask extends AsyncTask<Void, Void, ArrayList<Exhibitor>> {
+    public class RetrieveFeedTask extends AsyncTask<Void, Void, ArrayList<Exhibitor>> {
         private Exception exception;
 
         ArrayList<Exhibitor> temp = new ArrayList<Exhibitor>();
@@ -59,7 +61,7 @@ public class ExhibitorsListFragment extends Fragment{
         protected ArrayList<Exhibitor> doInBackground(Void... arg0) {
 
             try{
-                String url = "http://cltglobal.ddns.net:8080/exhibitors/1";
+                String url = "http://cltglobal.ddns.net:8080/user/exhibitors/1";
                 Log.d("does", url);
 
                 URL obj = new URL(url);
@@ -81,7 +83,7 @@ public class ExhibitorsListFragment extends Fragment{
                 for (int i=0; i<jsonArray.length(); i++) {
                     JSONObject object = jsonArray.getJSONObject(i);
                     if (jsonArray != null) {
-                        temp.add(new Exhibitor(object.getString("company_name")));
+                        temp.add(new Exhibitor(object.getString("company"), object.getString("logo_url")));
                         Log.d("WORK???2", temp.toString());
                     }
                 }
@@ -104,15 +106,18 @@ public class ExhibitorsListFragment extends Fragment{
         this.mExhibitorsList = exlist;
     }
 
+    public ArrayList<Exhibitor> getList() {
+        return this.mExhibitorsList;
+    }
 
     public void loadAll() {
-        // create an adapter
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter<Exhibitor>(mExhibitorsList, R.layout.exhibitor_item_layout, BR.exhibitor);
-        RecyclerView exhibitorListContainer = (RecyclerView) rootView.findViewById(R.id.exhibitors_list_recycler_view);
-        exhibitorListContainer.setHasFixedSize(false);
 
-        // set adapter
+        RecyclerView exhibitorListContainer = (RecyclerView) rootView.findViewById(R.id.exhibitors_list_recycler_view);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(getActivity().getApplicationContext(), mExhibitorsList);
+        exhibitorListContainer.setHasFixedSize(false);
         exhibitorListContainer.setAdapter(adapter);
+
+
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         exhibitorListContainer.setLayoutManager(llm);

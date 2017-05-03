@@ -12,9 +12,9 @@ public class Exhibitor {
     public String conference;
 //
 //
-    public Exhibitor(String company_name) {
+    public Exhibitor(String company_name, String logo_url) {
         this.company_name = company_name;
-        //this.logo_url = logo_url;
+        this.logo_url = logo_url;
         //this.conference = 1;
     }
 

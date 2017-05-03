@@ -64,7 +64,7 @@ public class NewsFragment extends Fragment {
                 for (int i=0; i<jsonArray.length(); i++) {
                     JSONObject object = jsonArray.getJSONObject(i);
                     if (jsonArray != null) {
-                        temp.add(new News(object.getString("title"),object.getString("text"),object.getString("author")));
+                        temp.add(new News(object.getString("title"),object.getString("text"),object.getString("author"), object.getString("logo_url")));
                         Log.d("WORK???2", temp.toString());
                     }
                 }
@@ -87,13 +87,12 @@ public class NewsFragment extends Fragment {
     }
 
     public void loadAll() {
-        // create an adapter
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter<News>(mNewsList, R.layout.news_item_layout, BR.news);
-        RecyclerView newsListContainer = (RecyclerView) rootView.findViewById(R.id.news_list_recycler_view);
-        newsListContainer.setHasFixedSize(false);
 
-        // set adapter
+        RecyclerView newsListContainer = (RecyclerView) rootView.findViewById(R.id.news_list_recycler_view);
+        NewsViewAdapter adapter = new NewsViewAdapter(getActivity().getApplicationContext(), mNewsList);
+        newsListContainer.setHasFixedSize(false);
         newsListContainer.setAdapter(adapter);
+
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         newsListContainer.setLayoutManager(llm);

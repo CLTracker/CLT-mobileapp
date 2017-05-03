@@ -25,6 +25,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@mipmap/unlv_logo"
+                android:padding="5dp"
                 android:scaleType="fitXY" />
             <LinearLayout
                 android:id="@+id/news_view"
