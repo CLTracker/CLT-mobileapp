@@ -10,11 +10,13 @@ public class Exhibitor {
     public String company_name;
     public String logo_url;
     public String conference;
+    public String bio;
 //
 //
-    public Exhibitor(String company_name, String logo_url) {
+    public Exhibitor(String company_name, String logo_url, String bio) {
         this.company_name = company_name;
         this.logo_url = logo_url;
+        this.bio = bio;
         //this.conference = 1;
     }
 
@@ -42,4 +44,13 @@ public class Exhibitor {
     public void printOut(){
         Log.d(company_name, conference);
     }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+    public String getBio() {
+        return this.bio;
+    }
+
+
 }

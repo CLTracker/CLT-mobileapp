@@ -43,10 +43,6 @@ public class ScheduleFragment extends Fragment  {
     public WeekView mWeekView;
     //public MonthLoader.MonthChangeListener mMonthChangeListener;
 
-
-
-
-
     public ScheduleFragment() {
         // Required empty public constructor
     }
@@ -110,15 +106,7 @@ public class ScheduleFragment extends Fragment  {
                     }
                 }
 
-
-//                try {
-
-
-//                } catch (Exception e) {
-//                }
-
-                //Log.d("WORK???3", jsonArray.toString());
-            }catch(Exception e)
+            } catch(Exception e)
             {
                 Log.d("NO WORK!!!", "\n\n\n"+e.toString()+"\n\n\n\n");
             }
@@ -141,26 +129,6 @@ public class ScheduleFragment extends Fragment  {
         //loadAll();
         this.events = exlist;
         Log.d("setlistEnd", this.events.toString());
-    }
-
-
-
-    public void loadAll() {
-        //setupWeekview();
-        // create an adapter
-//        RecyclerViewAdapter adapter = new RecyclerViewAdapter<Schedule>(mScheduleList, R.layout.schedule_item_layout, BR.schedule);
-//        RecyclerView newsListContainer = (RecyclerView) rootView.findViewById(R.id.schedule_recycler_view);
-//        newsListContainer.setHasFixedSize(false);
-////
-////        // set adapter
-//        newsListContainer.setAdapter(adapter);
-//        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-//        llm.setOrientation(LinearLayoutManager.VERTICAL);
-//        newsListContainer.setLayoutManager(llm);
-//        adapter.notifyDataSetChanged();
-//        newsListContainer.invalidate();
-//        adapter.notifyDataSetChanged();
-
     }
 
     public void setupWeekview(final ArrayList<WeekViewEvent> exlist){
