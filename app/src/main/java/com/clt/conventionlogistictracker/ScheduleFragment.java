@@ -184,6 +184,7 @@ public class ScheduleFragment extends Fragment  {
                 @Override
                 public ArrayList<? extends WeekViewEvent> onMonthChange(int i, int i1) {
                     ArrayList<WeekViewEvent> event2 = new ArrayList<>();
+                    mWeekView.goToHour(8);
 //                    events2 = new ArrayList<WeekViewEvent>(events);
 ////
 ////
@@ -208,7 +209,7 @@ public class ScheduleFragment extends Fragment  {
                     startTime2.set(Calendar.YEAR, 2017);
                     Calendar endTime2 = (Calendar) startTime2.clone();
                     endTime2.set(Calendar.MINUTE, 30);
-                    WeekViewEvent event2a = new WeekViewEvent(1, "Project Apollo: Automated Helio", startTime2, endTime2);
+                    WeekViewEvent event2a = new WeekViewEvent(1, "Project Apollo: Automated Heliodon V2.0", startTime2, endTime2);
                     event2a.setColor(Color.parseColor("#dc7772"));
                     event2.add(event2a);
 
@@ -246,8 +247,360 @@ public class ScheduleFragment extends Fragment  {
                     Calendar endTime5 = (Calendar) startTime5.clone();
                     endTime5.set(Calendar.MINUTE, 15);
                     WeekViewEvent event5a = new WeekViewEvent(1, "FLTR", startTime5, endTime5);
-                    event5a.setColor(Color.parseColor("#72d3bb"));
+                    event5a.setColor(Color.parseColor("#05D196"));
                     event2.add(event5a);
+
+                    Calendar startTime6 = Calendar.getInstance();
+                    startTime6.set(Calendar.HOUR_OF_DAY, 9);
+                    startTime6.set(Calendar.MINUTE, 15);
+                    startTime6.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime6.set(Calendar.MONTH, i1);
+                    startTime6.set(Calendar.YEAR, 2017);
+                    Calendar endTime6 = (Calendar) startTime6.clone();
+                    endTime6.set(Calendar.MINUTE, 30);
+                    WeekViewEvent event6a = new WeekViewEvent(1, "Scintillator and Silicon Photomutiplier High Energy Radiation Detector", startTime6, endTime6);
+                    event6a.setColor(Color.parseColor("#40b28d"));
+                    event2.add(event6a);
+
+                    Calendar startTime7 = Calendar.getInstance();
+                    startTime7.set(Calendar.HOUR_OF_DAY, 9);
+                    startTime7.set(Calendar.MINUTE, 30);
+                    startTime7.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime7.set(Calendar.MONTH, i1);
+                    startTime7.set(Calendar.YEAR, 2017);
+                    Calendar endTime7 = (Calendar) startTime7.clone();
+                    endTime7.set(Calendar.MINUTE, 45);
+                    WeekViewEvent event7a = new WeekViewEvent(1, "Casino Dice Project", startTime7, endTime7);
+                    event7a.setColor(Color.parseColor("#b9611c"));
+                    event2.add(event7a);
+
+                    Calendar startTime8 = Calendar.getInstance();
+                    startTime8.set(Calendar.HOUR_OF_DAY, 9);
+                    startTime8.set(Calendar.MINUTE, 45);
+                    startTime8.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime8.set(Calendar.MONTH, i1);
+                    startTime8.set(Calendar.YEAR, 2017);
+                    Calendar endTime8 = (Calendar) startTime8.clone();
+                    endTime8.set(Calendar.MINUTE, 60);
+                    WeekViewEvent event8a = new WeekViewEvent(1, "BREAK", startTime8, endTime8);
+                    event8a.setColor(Color.parseColor("#ecd6a4"));
+                    event2.add(event8a);
+
+                    Calendar startTime9 = Calendar.getInstance();
+                    startTime9.set(Calendar.HOUR_OF_DAY, 10);
+                    startTime9.set(Calendar.MINUTE, 0);
+                    startTime9.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime9.set(Calendar.MONTH, i1);
+                    startTime9.set(Calendar.YEAR, 2017);
+                    Calendar endTime9 = (Calendar) startTime9.clone();
+                    endTime9.set(Calendar.MINUTE, 15);
+                    WeekViewEvent event9a = new WeekViewEvent(1, "The Hi Ball", startTime9, endTime9);
+                    event9a.setColor(Color.parseColor("#096c74"));
+                    event2.add(event9a);
+
+                    Calendar startTime10 = Calendar.getInstance();
+                    startTime10.set(Calendar.HOUR_OF_DAY, 10);
+                    startTime10.set(Calendar.MINUTE, 15);
+                    startTime10.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime10.set(Calendar.MONTH, i1);
+                    startTime10.set(Calendar.YEAR, 2017);
+                    Calendar endTime10 = (Calendar) startTime10.clone();
+                    endTime10.set(Calendar.MINUTE, 30);
+                    WeekViewEvent event10a = new WeekViewEvent(1, "LVB Light Rail", startTime10, endTime10);
+                    event10a.setColor(Color.parseColor("#79cdcd"));
+                    event2.add(event10a);
+
+                    Calendar startTime11 = Calendar.getInstance();
+                    startTime11.set(Calendar.HOUR_OF_DAY, 10);
+                    startTime11.set(Calendar.MINUTE, 30);
+                    startTime11.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime11.set(Calendar.MONTH, i1);
+                    startTime11.set(Calendar.YEAR, 2017);
+                    Calendar endTime11 = (Calendar) startTime11.clone();
+                    endTime11.set(Calendar.MINUTE, 45);
+                    WeekViewEvent event11a = new WeekViewEvent(1, "CLT", startTime11, endTime11);
+                    event11a.setColor(Color.parseColor("#009688"));
+                    event2.add(event11a);
+
+                    Calendar startTime12 = Calendar.getInstance();
+                    startTime12.set(Calendar.HOUR_OF_DAY, 10);
+                    startTime12.set(Calendar.MINUTE, 45);
+                    startTime12.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime12.set(Calendar.MONTH, i1);
+                    startTime12.set(Calendar.YEAR, 2017);
+                    Calendar endTime12 = (Calendar) startTime12.clone();
+                    endTime12.set(Calendar.MINUTE, 60);
+                    WeekViewEvent event12a = new WeekViewEvent(1, "A.P.E.L", startTime12, endTime12);
+                    event12a.setColor(Color.parseColor("#94b8b8"));
+                    event2.add(event12a);
+
+                    Calendar startTime13 = Calendar.getInstance();
+                    startTime13.set(Calendar.HOUR_OF_DAY, 11);
+                    startTime13.set(Calendar.MINUTE, 0);
+                    startTime13.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime13.set(Calendar.MONTH, i1);
+                    startTime13.set(Calendar.YEAR, 2017);
+                    Calendar endTime13 = (Calendar) startTime13.clone();
+                    endTime13.set(Calendar.MINUTE, 15);
+                    WeekViewEvent event13a = new WeekViewEvent(1, "Micro Grid II: Controls and Revisions", startTime13, endTime13);
+                    event13a.setColor(Color.parseColor("#aaaaaa"));
+                    event2.add(event13a);
+
+                    Calendar startTime14 = Calendar.getInstance();
+                    startTime14.set(Calendar.HOUR_OF_DAY, 11);
+                    startTime14.set(Calendar.MINUTE, 15);
+                    startTime14.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime14.set(Calendar.MONTH, i1);
+                    startTime14.set(Calendar.YEAR, 2017);
+                    Calendar endTime14 = (Calendar) startTime14.clone();
+                    endTime14.set(Calendar.MINUTE, 30);
+                    WeekViewEvent event14a = new WeekViewEvent(1, "Coanda Quadcopter", startTime14, endTime14);
+                    event14a.setColor(Color.parseColor("#eeb5b5"));
+                    event2.add(event14a);
+
+                    Calendar startTime15 = Calendar.getInstance();
+                    startTime15.set(Calendar.HOUR_OF_DAY, 11);
+                    startTime15.set(Calendar.MINUTE, 30);
+                    startTime15.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime15.set(Calendar.MONTH, i1);
+                    startTime15.set(Calendar.YEAR, 2017);
+                    Calendar endTime15 = (Calendar) startTime15.clone();
+                    endTime15.set(Calendar.MINUTE, 45);
+                    WeekViewEvent event15a = new WeekViewEvent(1, "CASH", startTime15, endTime15);
+                    event15a.setColor(Color.parseColor("#ee7777"));
+                    event2.add(event15a);
+
+                    Calendar startTime16 = Calendar.getInstance();
+                    startTime16.set(Calendar.HOUR_OF_DAY, 11);
+                    startTime16.set(Calendar.MINUTE, 45);
+                    startTime16.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime16.set(Calendar.MONTH, i1);
+                    startTime16.set(Calendar.YEAR, 2017);
+                    Calendar endTime16 = (Calendar) startTime16.clone();
+                    endTime16.set(Calendar.MINUTE, 60);
+                    WeekViewEvent event16a = new WeekViewEvent(1, "Wastewater Evaporator", startTime16, endTime16);
+                    event16a.setColor(Color.parseColor("#e7264c"));
+                    event2.add(event16a);
+
+                    Calendar startTime17 = Calendar.getInstance();
+                    startTime17.set(Calendar.HOUR_OF_DAY, 12);
+                    startTime17.set(Calendar.MINUTE, 0);
+                    startTime17.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime17.set(Calendar.MONTH, i1);
+                    startTime17.set(Calendar.YEAR, 2017);
+                    Calendar endTime17 = (Calendar) startTime17.clone();
+                    endTime17.set(Calendar.MINUTE, 15);
+                    WeekViewEvent event17a = new WeekViewEvent(1, "The Electrical Tester", startTime17, endTime17);
+                    event17a.setColor(Color.parseColor("#7e3141"));
+                    event2.add(event17a);
+
+                    Calendar startTime18 = Calendar.getInstance();
+                    startTime18.set(Calendar.HOUR_OF_DAY, 12);
+                    startTime18.set(Calendar.MINUTE, 15);
+                    startTime18.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime18.set(Calendar.MONTH, i1);
+                    startTime18.set(Calendar.YEAR, 2017);
+                    Calendar endTime18 = (Calendar) startTime18.clone();
+                    endTime18.set(Calendar.MINUTE, 30);
+                    WeekViewEvent endTime18a = new WeekViewEvent(1, "Universally Expanding Cage ME Team", startTime18, endTime18);
+                    endTime18a.setColor(Color.parseColor("#bb769b"));
+                    event2.add(endTime18a);
+
+                    Calendar startTime19 = Calendar.getInstance();
+                    startTime19.set(Calendar.HOUR_OF_DAY, 12);
+                    startTime19.set(Calendar.MINUTE, 30);
+                    startTime19.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime19.set(Calendar.MONTH, i1);
+                    startTime19.set(Calendar.YEAR, 2017);
+                    Calendar endTime19 = (Calendar) startTime19.clone();
+                    endTime19.set(Calendar.HOUR_OF_DAY, 14);
+                    endTime19.set(Calendar.MINUTE, 0);
+                    WeekViewEvent endTime19a = new WeekViewEvent(1, "LUNCH", startTime19, endTime19);
+                    endTime19a.setColor(Color.parseColor("#84ac83"));
+                    event2.add(endTime19a);
+
+                    Calendar startTime20 = Calendar.getInstance();
+                    startTime20.set(Calendar.HOUR_OF_DAY, 14);
+                    startTime20.set(Calendar.MINUTE, 5);
+                    startTime20.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime20.set(Calendar.MONTH, i1);
+                    startTime20.set(Calendar.YEAR, 2017);
+                    Calendar endTime20 = (Calendar) startTime20.clone();
+                    endTime20.set(Calendar.MINUTE, 20);
+                    WeekViewEvent endTime20a = new WeekViewEvent(1, "Universally Expanding Cage EE Team", startTime20, endTime20);
+                    endTime20a.setColor(Color.parseColor("#76bbb2"));
+                    event2.add(endTime20a);
+
+                    Calendar startTime21 = Calendar.getInstance();
+                    startTime21.set(Calendar.HOUR_OF_DAY, 14);
+                    startTime21.set(Calendar.MINUTE, 20);
+                    startTime21.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime21.set(Calendar.MONTH, i1);
+                    startTime21.set(Calendar.YEAR, 2017);
+                    Calendar endTime21 = (Calendar) startTime21.clone();
+                    endTime21.set(Calendar.MINUTE, 35);
+                    WeekViewEvent endTime21a = new WeekViewEvent(1, "Bombyx Mori Silk Antimicrobial Gel", startTime21, endTime21);
+                    endTime21a.setColor(Color.parseColor("#b399bf"));
+                    event2.add(endTime21a);
+
+                    Calendar startTime22 = Calendar.getInstance();
+                    startTime22.set(Calendar.HOUR_OF_DAY, 14);
+                    startTime22.set(Calendar.MINUTE, 35);
+                    startTime22.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime22.set(Calendar.MONTH, i1);
+                    startTime22.set(Calendar.YEAR, 2017);
+                    Calendar endTime22 = (Calendar) startTime22.clone();
+                    endTime22.set(Calendar.MINUTE, 50);
+                    WeekViewEvent endTime22a = new WeekViewEvent(1, "Demand Responsive Pedestrian", startTime22, endTime22);
+                    endTime22a.setColor(Color.parseColor("#ccd0ac"));
+                    event2.add(endTime22a);
+
+                    Calendar startTime23 = Calendar.getInstance();
+                    startTime23.set(Calendar.HOUR_OF_DAY, 14);
+                    startTime23.set(Calendar.MINUTE, 50);
+                    startTime23.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime23.set(Calendar.MONTH, i1);
+                    startTime23.set(Calendar.YEAR, 2017);
+                    Calendar endTime23 = (Calendar) startTime23.clone();
+                    endTime23.set(Calendar.HOUR_OF_DAY, 15);
+                    endTime23.set(Calendar.MINUTE, 5);
+                    WeekViewEvent endTime23a = new WeekViewEvent(1, "Z-Med Alert", startTime23, endTime23);
+                    endTime23a.setColor(Color.parseColor("#94b68c"));
+                    event2.add(endTime23a);
+
+                    Calendar startTime24 = Calendar.getInstance();
+                    startTime24.set(Calendar.HOUR_OF_DAY, 15);
+                    startTime24.set(Calendar.MINUTE, 5);
+                    startTime24.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime24.set(Calendar.MONTH, i1);
+                    startTime24.set(Calendar.YEAR, 2017);
+                    Calendar endTime24 = (Calendar) startTime24.clone();
+                    endTime24.set(Calendar.MINUTE, 20);
+                    WeekViewEvent endTime24a = new WeekViewEvent(1, "Spots", startTime24, endTime24);
+                    endTime24a.setColor(Color.parseColor("#6da178"));
+                    event2.add(endTime24a);
+
+                    Calendar startTime25 = Calendar.getInstance();
+                    startTime25.set(Calendar.HOUR_OF_DAY, 15);
+                    startTime25.set(Calendar.MINUTE, 20);
+                    startTime25.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime25.set(Calendar.MONTH, i1);
+                    startTime25.set(Calendar.YEAR, 2017);
+                    Calendar endTime25 = (Calendar) startTime25.clone();
+                    endTime25.set(Calendar.MINUTE, 35);
+                    WeekViewEvent endTime25a = new WeekViewEvent(1, "Hailey’s Hand Version 3.0", startTime25, endTime25);
+                    endTime25a.setColor(Color.parseColor("#528369"));
+                    event2.add(endTime25a);
+
+                    Calendar startTime26 = Calendar.getInstance();
+                    startTime26.set(Calendar.HOUR_OF_DAY, 15);
+                    startTime26.set(Calendar.MINUTE, 35);
+                    startTime26.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime26.set(Calendar.MONTH, i1);
+                    startTime26.set(Calendar.YEAR, 2017);
+                    Calendar endTime26 = (Calendar) startTime26.clone();
+                    endTime26.set(Calendar.MINUTE, 50);
+                    WeekViewEvent endTime26a = new WeekViewEvent(1, "Micro Grid II: Load Share", startTime26, endTime26);
+                    endTime26a.setColor(Color.parseColor("#3d6562"));
+                    event2.add(endTime26a);
+
+                    Calendar startTime27 = Calendar.getInstance();
+                    startTime27.set(Calendar.HOUR_OF_DAY, 15);
+                    startTime27.set(Calendar.MINUTE, 50);
+                    startTime27.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime27.set(Calendar.MONTH, i1);
+                    startTime27.set(Calendar.YEAR, 2017);
+                    Calendar endTime27 = (Calendar) startTime27.clone();
+                    endTime27.set(Calendar.HOUR_OF_DAY, 16);
+                    endTime27.set(Calendar.MINUTE, 5);
+                    WeekViewEvent endTime27a = new WeekViewEvent(1, "BREAK", startTime27, endTime27);
+                    endTime27a.setColor(Color.parseColor("#ecd6a4"));
+                    event2.add(endTime27a);
+
+                    Calendar startTime28 = Calendar.getInstance();
+                    startTime28.set(Calendar.HOUR_OF_DAY, 16);
+                    startTime28.set(Calendar.MINUTE, 5);
+                    startTime28.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime28.set(Calendar.MONTH, i1);
+                    startTime28.set(Calendar.YEAR, 2017);
+                    Calendar endTime28 = (Calendar) startTime28.clone();
+                    endTime28.set(Calendar.MINUTE, 20);
+                    WeekViewEvent endTime28a = new WeekViewEvent(1, "Harco Spray Gun", startTime28, endTime28);
+                    endTime28a.setColor(Color.parseColor("#632b6c"));
+                    event2.add(endTime28a);
+
+                    Calendar startTime29 = Calendar.getInstance();
+                    startTime29.set(Calendar.HOUR_OF_DAY, 16);
+                    startTime29.set(Calendar.MINUTE, 20);
+                    startTime29.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime29.set(Calendar.MONTH, i1);
+                    startTime29.set(Calendar.YEAR, 2017);
+                    Calendar endTime29 = (Calendar) startTime29.clone();
+                    endTime29.set(Calendar.MINUTE, 35);
+                    WeekViewEvent endTime29a = new WeekViewEvent(1, "UNLV Paradise Campus Floodiing", startTime29, endTime29);
+                    endTime29a.setColor(Color.parseColor("#c76b98"));
+                    event2.add(endTime29a);
+
+                    Calendar startTime30 = Calendar.getInstance();
+                    startTime30.set(Calendar.HOUR_OF_DAY, 16);
+                    startTime30.set(Calendar.MINUTE, 35);
+                    startTime30.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime30.set(Calendar.MONTH, i1);
+                    startTime30.set(Calendar.YEAR, 2017);
+                    Calendar endTime30 = (Calendar) startTime30.clone();
+                    endTime30.set(Calendar.MINUTE, 50);
+                    WeekViewEvent endTime30a = new WeekViewEvent(1, "Carpel Tunnel Relief Massager", startTime30, endTime30);
+                    endTime30a.setColor(Color.parseColor("#f09f9c"));
+                    event2.add(endTime30a);
+
+                    Calendar startTime31 = Calendar.getInstance();
+                    startTime31.set(Calendar.HOUR_OF_DAY, 16);
+                    startTime31.set(Calendar.MINUTE, 50);
+                    startTime31.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime31.set(Calendar.MONTH, i1);
+                    startTime31.set(Calendar.YEAR, 2017);
+                    Calendar endTime31 = (Calendar) startTime31.clone();
+                    endTime31.set(Calendar.HOUR_OF_DAY, 17);
+                    endTime31.set(Calendar.MINUTE, 5);
+                    WeekViewEvent endTime31a = new WeekViewEvent(1, "Linked", startTime31, endTime31);
+                    endTime31a.setColor(Color.parseColor("#fcc3a3"));
+                    event2.add(endTime31a);
+
+                    Calendar startTime32 = Calendar.getInstance();
+                    startTime32.set(Calendar.HOUR_OF_DAY, 17);
+                    startTime32.set(Calendar.MINUTE, 5);
+                    startTime32.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime32.set(Calendar.MONTH, i1);
+                    startTime32.set(Calendar.YEAR, 2017);
+                    Calendar endTime32 = (Calendar) startTime32.clone();
+                    endTime32.set(Calendar.MINUTE, 20);
+                    WeekViewEvent endTime32a = new WeekViewEvent(1, "Adaptive Power Supply", startTime32, endTime32);
+                    endTime32a.setColor(Color.parseColor("#006d60"));
+                    event2.add(endTime32a);
+
+                    Calendar startTime33 = Calendar.getInstance();
+                    startTime33.set(Calendar.HOUR_OF_DAY, 17);
+                    startTime33.set(Calendar.MINUTE, 20);
+                    startTime33.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime33.set(Calendar.MONTH, i1);
+                    startTime33.set(Calendar.YEAR, 2017);
+                    Calendar endTime33 = (Calendar) startTime33.clone();
+                    endTime33.set(Calendar.MINUTE, 35);
+                    WeekViewEvent endTime33a = new WeekViewEvent(1, "Hoover Dam Security Checkpoint", startTime33, endTime33);
+                    endTime33a.setColor(Color.parseColor("#009481"));
+                    event2.add(endTime33a);
+
+                    Calendar startTime34 = Calendar.getInstance();
+                    startTime34.set(Calendar.HOUR_OF_DAY, 17);
+                    startTime34.set(Calendar.MINUTE, 35);
+                    startTime34.set(Calendar.DAY_OF_MONTH, 4);
+                    startTime34.set(Calendar.MONTH, i1);
+                    startTime34.set(Calendar.YEAR, 2017);
+                    Calendar endTime34 = (Calendar) startTime34.clone();
+                    endTime34.set(Calendar.MINUTE, 50);
+                    WeekViewEvent endTime34a = new WeekViewEvent(1, "Impact Solutions", startTime34, endTime34);
+                    endTime34a.setColor(Color.parseColor("#17b297"));
+                    event2.add(endTime34a);
                     //TODO: this is your comparison
                     // WeekViewEvent event = new WeekViewEvent(1, "hello world", 2017, 4, 30, 1, 10, 2017, 4, 30, 3, 0);
 
@@ -291,4 +644,3 @@ public class ScheduleFragment extends Fragment  {
     }
 
 }
-
