@@ -505,7 +505,7 @@ public class ScheduleFragment extends Fragment  {
                     startTime29.set(Calendar.YEAR, 2017);
                     Calendar endTime29 = (Calendar) startTime29.clone();
                     endTime29.set(Calendar.MINUTE, 35);
-                    WeekViewEvent endTime29a = new WeekViewEvent(1, "UNLV Paradise Campus Floodiing", startTime29, endTime29);
+                    WeekViewEvent endTime29a = new WeekViewEvent(1, "UNLV Paradise Campus Flooding", startTime29, endTime29);
                     endTime29a.setColor(Color.parseColor("#c76b98"));
                     event2.add(endTime29a);
 
@@ -571,7 +571,44 @@ public class ScheduleFragment extends Fragment  {
                     event2.add(endTime34a);
                     //TODO: this is your comparison
                     // WeekViewEvent event = new WeekViewEvent(1, "hello world", 2017, 4, 30, 1, 10, 2017, 4, 30, 3, 0);
+                    Calendar startTime35 = Calendar.getInstance();
+                    startTime35.set(Calendar.HOUR_OF_DAY, 12);
+                    startTime35.set(Calendar.MINUTE, 0);
+                    startTime35.set(Calendar.DAY_OF_MONTH, 3);
+                    startTime35.set(Calendar.MONTH, i1);
+                    startTime35.set(Calendar.YEAR, 2017);
+                    Calendar endTime35 = (Calendar) startTime35.clone();
+                    endTime35.set(Calendar.HOUR_OF_DAY, 17);
+                    endTime35.set(Calendar.MINUTE, 0);
+                    WeekViewEvent endTime35a = new WeekViewEvent(1, "Senior Design Competition Setup", startTime35, endTime35);
+                    endTime35a.setColor(Color.parseColor("#bac6d0"));
+                    event2.add(endTime35a);
 
+                    Calendar startTime36 = Calendar.getInstance();
+                    startTime36.set(Calendar.HOUR_OF_DAY, 17);
+                    startTime36.set(Calendar.MINUTE, 30);
+                    startTime36.set(Calendar.DAY_OF_MONTH, 5);
+                    startTime36.set(Calendar.MONTH, i1);
+                    startTime36.set(Calendar.YEAR, 2017);
+                    Calendar endTime36 = (Calendar) startTime36.clone();
+                    endTime36.set(Calendar.HOUR_OF_DAY, 18);
+                    endTime36.set(Calendar.MINUTE, 45);
+                    WeekViewEvent endTime36a = new WeekViewEvent(1, "Viewing of Senior Design Projects", startTime36, endTime36);
+                    endTime36a.setColor(Color.parseColor("#ff8773"));
+                    event2.add(endTime36a);
+
+                    Calendar startTime37 = Calendar.getInstance();
+                    startTime37.set(Calendar.HOUR_OF_DAY, 18);
+                    startTime37.set(Calendar.MINUTE, 45);
+                    startTime37.set(Calendar.DAY_OF_MONTH, 5);
+                    startTime37.set(Calendar.MONTH, i1);
+                    startTime37.set(Calendar.YEAR, 2017);
+                    Calendar endTime37 = (Calendar) startTime37.clone();
+                    endTime37.set(Calendar.HOUR_OF_DAY, 22);
+                    endTime37.set(Calendar.MINUTE, 0);
+                    WeekViewEvent endTime37a = new WeekViewEvent(1, "Senior Design Awards Dinner", startTime37, endTime37);
+                    endTime37a.setColor(Color.parseColor("#bd3a3a"));
+                    event2.add(endTime37a);
 ////
 
 //////                    Log.d("yoooooooo", "hello");
