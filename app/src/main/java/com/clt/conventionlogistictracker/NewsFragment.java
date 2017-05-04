@@ -43,7 +43,7 @@ public class NewsFragment extends Fragment {
         protected ArrayList<News> doInBackground(Void... arg0) {
 
             try{
-                String url = "http://cltglobal.ddns.net:8080/news/1";
+                String url = "https://clt.website/news/1";
                 Log.d("does", url);
 
                 URL obj = new URL(url);
