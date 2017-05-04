@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+import com.squareup.picasso.Picasso;
+
 public class FloorPlansFragment extends Fragment {
 
     public FloorPlansFragment() {
@@ -20,16 +22,23 @@ public class FloorPlansFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_floor_plans, container, false);
-        WebView mWebView = (WebView) rootView.findViewById(R.id.floor_plan);
+        /*WebView mWebView = (WebView) rootView.findViewById(R.id.floor_plan);
         // Enable Javascript
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
         mWebView.getSettings().setBuiltInZoomControls(true);
         mWebView.getSettings().setDisplayZoomControls(false);
+        mWebView.getSettings().setDomStorageEnabled(true);
 
-        mWebView.loadUrl("http://grfx.cstv.com/schools/unlv/graphics/parking-map-campus-mens-bball.jpg");
+        mWebView.loadUrl("http://i.imgur.com/uxbA4N2.jpg");*/
 
+
+        TouchImageView imageView = (TouchImageView) rootView.findViewById(R.id.floor_plan);
+
+        Picasso.with(getContext())
+                .load("http://i.imgur.com/uxbA4N2.jpg")
+                .into(imageView);
         // Inflate the layout for this fragment
         return rootView;
     }

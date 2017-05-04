@@ -61,7 +61,8 @@ public class ExhibitorsListFragment extends Fragment{
         protected ArrayList<Exhibitor> doInBackground(Void... arg0) {
 
             try{
-                String url = "http://cltglobal.ddns.net:8080/user/exhibitors/1";
+                //String url = "http://cltglobal.ddns.net:8080/user/exhibitors/1";
+                String url = "https://clt.website/user/exhibitors/1";
                 Log.d("does", url);
 
                 URL obj = new URL(url);
